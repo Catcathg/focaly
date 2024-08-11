@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display&family=Poiret+One&display=swap');
+
+body {
+  padding: 25px 25px;
+}
+
+span {
+  font-size: 14px;
+  font-weight: 200;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-family: "Lexend", sans-serif;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0 auto;
+}
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}

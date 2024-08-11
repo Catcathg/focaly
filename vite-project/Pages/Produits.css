@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Logo {
+    width: 200px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.produit {
+    display: flex;
+    justify-content: center;
+}
