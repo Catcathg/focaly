@@ -12,14 +12,14 @@ import GoPro12 from '../Pages/GoPro12'
 function App() {
 
   return (
-    <div className="App">
+    <Router>
       <Routes>
-        <Route path={'/'} element={<Produits />} />
-        <Route path={'/gopro11'} element={<GoPro11 />} />
-        <Route path={'/gopro12'} element={<GoPro12 />} />
-        <Route path={'*'} element={<>Erreur 404</>} />
+        <Route path="/" element={<Produits />} />
+        <Route path="/gopro11" element={<GoPro11 />} />
+        <Route path="/gopro12" element={<GoPro12 />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
-    </div>
+    </Router>
   )
 }
 
