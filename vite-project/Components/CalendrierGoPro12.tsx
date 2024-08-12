@@ -8,7 +8,7 @@ import { pickersLayoutClasses } from '@mui/x-date-pickers/PickersLayout';
 
 export default function DateRangeCalculator() {
     const [value, setValue] = React.useState<[dayjs.Dayjs | null, dayjs.Dayjs | null]>([dayjs(), dayjs().add(1, 'day')]);
-    const [goproVariant, setGoproVariant] = React.useState<string>('GoPro Hero 12');
+    const [goproVariant, setGoproVariant] = React.useState<string>('GoPro Hero 11');
     const [durationMessage, setDurationMessage] = React.useState<string>('');
     const [totalCost, setTotalCost] = React.useState<number>(0);
 
@@ -40,7 +40,7 @@ export default function DateRangeCalculator() {
                         onChange={(event) => setGoproVariant(event.target.value)}
                         fullWidth
                     >
-                        <MenuItem value="GoPro Hero 12">GoPro Hero 12</MenuItem>
+                        <MenuItem value="GoPro Hero 11">GoPro Hero 11</MenuItem>
                     </Select>
                 </Box>
 

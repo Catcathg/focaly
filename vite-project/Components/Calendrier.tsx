@@ -49,7 +49,6 @@ export default function DateRangeCalculator() {
 
                 <Box sx={{ minWidth: 300, mt: 3 }}>
                     <StaticDateRangePicker
-                        startText="Date de début"
                         endText="Date de fin"
                         value={value}
                         onChange={(newValue) => setValue(newValue)}

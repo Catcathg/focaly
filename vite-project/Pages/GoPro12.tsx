@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from '../src/assets/focaly-logo.jpeg'
 import Carrousel from '../Components/CarrouselGoPro12'
 import './GoPro11.css';
