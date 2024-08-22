@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Grid, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -22,14 +22,19 @@ const ThumbnailImage = styled('img')({
   },
 });
 
-const ProductImageGallery = ({ images }) => {
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+// Définir l'interface pour les props
+interface ProductImageGalleryProps {
+  images: string[]; // Tableau de chaînes représentant les URLs des images
+}
+
+const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({ images }) => {
+  const [selectedImage, setSelectedImage] = useState<string>(images[0]);
 
   useEffect(() => {
     setSelectedImage(images[0]);
   }, [images]);
 
-  const handleThumbnailClick = (image) => {
+  const handleThumbnailClick = (image: string) => {
     setSelectedImage(image);
   };
 
