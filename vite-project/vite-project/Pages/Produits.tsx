@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Produits.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 // images
 import Logo from '../src/assets/focaly-logo.jpeg';
-import GoPro1 from '../src/assets/gopro1.png';
-import GoPro2 from '../src/assets/gopro2.jpeg';
-import GoPro3 from '../src/assets/gopro3.jpeg';
-import GoPro4 from '../src/assets/gopro4.png';
-import GoPro112 from '../src/assets/gopro112.jpeg';
-import GoPro212 from '../src/assets/gopro212.jpeg';
-import GoPro312 from '../src/assets/gopro312.jpeg';
-import GoPro412 from '../src/assets/gopro412.jpeg';
+import GoPro1 from '../src/assets/gopro11-1.png';
+import GoPro2 from '../src/assets/gopro11-2.jpeg';
+import GoPro3 from '../src/assets/gopro11-3.jpeg';
+import GoPro4 from '../src/assets/gopro11-4.png';
+import GoPro112 from '../src/assets/gopro12-1.jpeg';
+import GoPro212 from '../src/assets/gopro12-2.jpeg';
+import GoPro312 from '../src/assets/gopro12-3.jpeg';
+import GoPro412 from '../src/assets/gopro12-4.jpeg';
 
 // Composants
 import ProductImageGallery from '../Components/CarrouselImages';
 
 function Produits() {
     const [selectedModel, setSelectedModel] = useState('GoPro11');
-    const [startDate, setStartDate] = useState<Date | null>(null);
-    const [endDate, setEndDate] = useState<Date | null>(null);
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
     const [showCalendar, setShowCalendar] = useState(false);
     const [durationMessage, setDurationMessage] = useState('');
     const [totalCost, setTotalCost] = useState(0);
@@ -40,10 +40,12 @@ function Produits() {
         setShowCalendar(!showCalendar);
     };
 
-    const handleDateChange = (dates: [Date | null, Date | null]) => {
+    const handleDateChange = (dates) => {
         const [start, end] = dates;
-        setStartDate(start || null);
-        setEndDate(end || null);
+        if (start) {
+            setStartDate(start);
+            setEndDate(end);
+        }
     };
 
     useEffect(() => {
@@ -119,8 +121,8 @@ function Produits() {
                                 <DatePicker
                                     selected={startDate}
                                     onChange={handleDateChange}
-                                    startDate={startDate || undefined}
-                                    endDate={endDate || undefined}
+                                    startDate={startDate}
+                                    endDate={endDate}
                                     selectsRange
                                     inline
                                     minDate={new Date()}
@@ -132,7 +134,7 @@ function Produits() {
                                                 return 'disabled-date';
                                             }
                                         }
-                                        return '';
+                                        return undefined;
                                     }}
                                 />
                                 <div className="date-info">
@@ -150,3 +152,4 @@ function Produits() {
 }
 
 export default Produits;
+
