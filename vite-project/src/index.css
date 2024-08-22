@@ -5,12 +5,10 @@ body {
 }
 
 span {
-  font-size: 14px;
-  font-weight: 200;
-  font-family: 'Lexend';
-  font-style: normal;
+  font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
-  font-family: "Lexend", sans-serif;
+  font-weight: weight;
+  font-style: normal;
 }
 
 a {
@@ -24,7 +22,7 @@ body {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #0205d5;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -45,10 +43,10 @@ button:focus-visible {
   }
 
   a:hover {
-    color: #747bff;
+    color: white;
   }
 
   button {
-    background-color: #f9f9f9;
+    background-color: white;
   }
 }

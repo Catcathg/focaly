@@ -3,11 +3,16 @@ import App from './App';
 import './index.css';
 import { HashRouter as Router } from 'react-router-dom';
 
-const rootElement = document.getElementById('root')
-const root = createRoot(rootElement);
+const rootElement = document.getElementById('root');
 
-root.render(
-  <Router>
-    <App />
-  </Router>
-);
+if (rootElement) {
+  const root = createRoot(rootElement);
+
+  root.render(
+    <Router>
+      <App />
+    </Router>
+  );
+} else {
+  throw new Error("Failed to find the root element");
+}
