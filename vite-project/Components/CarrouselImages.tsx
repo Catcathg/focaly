@@ -22,9 +22,8 @@ const ThumbnailImage = styled('img')({
   },
 });
 
-// Définir l'interface pour les props
 interface ProductImageGalleryProps {
-  images: string[]; // Tableau de chaînes représentant les URLs des images
+  images: string[]; 
 }
 
 const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({ images }) => {
