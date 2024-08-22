@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Produits.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -19,8 +19,8 @@ import ProductImageGallery from '../Components/CarrouselImages';
 
 function Produits() {
     const [selectedModel, setSelectedModel] = useState('GoPro11');
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
+    const [startDate, setStartDate] = useState<Date | null>(null);
+    const [endDate, setEndDate] = useState<Date | null>(null);
     const [showCalendar, setShowCalendar] = useState(false);
     const [durationMessage, setDurationMessage] = useState('');
     const [totalCost, setTotalCost] = useState(0);
@@ -40,12 +40,10 @@ function Produits() {
         setShowCalendar(!showCalendar);
     };
 
-    const handleDateChange = (dates) => {
+    const handleDateChange = (dates: [Date | null, Date | null]) => {
         const [start, end] = dates;
-        if (start) {
-            setStartDate(start);
-            setEndDate(end);
-        }
+        setStartDate(start || null);
+        setEndDate(end || null);
     };
 
     useEffect(() => {
@@ -121,8 +119,8 @@ function Produits() {
                                 <DatePicker
                                     selected={startDate}
                                     onChange={handleDateChange}
-                                    startDate={startDate}
-                                    endDate={endDate}
+                                    startDate={startDate || undefined}
+                                    endDate={endDate || undefined}
                                     selectsRange
                                     inline
                                     minDate={new Date()}
@@ -134,7 +132,7 @@ function Produits() {
                                                 return 'disabled-date';
                                             }
                                         }
-                                        return undefined;
+                                        return '';
                                     }}
                                 />
                                 <div className="date-info">
@@ -152,4 +150,3 @@ function Produits() {
 }
 
 export default Produits;
-
